@@ -1,0 +1,32 @@
+<div class="toolbar">
+	<h1 id="pageTitle">
+		Edit <%=@item.title%>
+	</h1>
+</div>
+
+<form title="Edit Item" 
+	  class="panel" 
+	  id="item_edit_form" 
+	  method="POST" 
+	  action="<%=url_for(:action => :update)%>" selected="true">
+	<fieldset>
+		<input type="hidden" name="id" value="<%=@item.object%>"/>
+		
+		  <div class="row">
+			  <label>Title: </label>
+			  <input type="text" name="item[title]" value="<%=@item.title%>"/>
+		  </div>
+		
+		  <div class="row">
+			  <label>Body: </label>
+			  <input type="text" name="item[body]" value="<%=@item.body%>"/>
+		  </div>
+		
+	</fieldset>
+	<input type="submit" value="Update"/>
+	<p align="center">
+		<a href="<%=url_for(:action => :delete, :id => @item.object)%>">
+			<font color="#990000">Delete</font>
+		</a>
+	</p>
+</form>

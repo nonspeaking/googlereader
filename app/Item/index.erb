@@ -1,0 +1,14 @@
+<div class="toolbar">
+	<h1 id="pageTitle">
+		Google Reader
+	</h1>
+</div>
+
+<ul id="items" title="Items" selected="true">
+	<%@items.each do |x|%>
+	
+	<li style="font-weight: <%= (x.read=="true") ? "normal":"bold" %> ">
+	  <%=link_to "#{x.title}", :action => :show, :id => x.object%>
+	</li>
+	<%end%>
+</ul>
